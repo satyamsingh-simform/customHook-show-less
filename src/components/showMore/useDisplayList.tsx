@@ -37,14 +37,16 @@ export default function DisplayList({lists,countt}:DisplayListProp){
 }
 */
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 
-export default function useDisplayList(){
+export default function useDisplayList(lists:ReactNode[],Maxcount:number=6){
     const [expended,setExpended]=useState(false);
     
+    const currentList=expended?lists:lists.slice(0,Maxcount);
+
     function handleExpendedToggle(){
         setExpended(prev=>!prev)
     }
 
-    return{expended,handleExpendedToggle}
+    return{expended,handleExpendedToggle,currentList}
 }

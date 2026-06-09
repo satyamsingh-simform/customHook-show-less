@@ -1,4 +1,6 @@
-import DisplayList from "./components/DisplayList"
+// import DisplayList from "./components/showMore/DisplayList"
+
+import { Day } from "./components/dayPassed/Day"
 
 export default function App(){
   const lists=['1','2','3','4','5','6','7','8','9','10']
@@ -6,8 +8,10 @@ export default function App(){
   
   return(
     <>
-      <DisplayList lists={lists} Maxcount={6}/>
-      <DisplayList lists={lists2} Maxcount={7}/>
+      {/* <DisplayList lists={lists} Maxcount={6}/> */}
+      {/* <DisplayList lists={lists2} Maxcount={7}/> */}
+
+      <Day/>
     </>
   )
 }

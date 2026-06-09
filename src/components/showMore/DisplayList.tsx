@@ -7,11 +7,11 @@ type DisplayListProps={
 }
 
 export default function DisplayList({lists, Maxcount}:DisplayListProps){
-    const {expended,handleExpendedToggle}=useDisplayList();
+    const {expended,handleExpendedToggle,currentList}=useDisplayList(lists, Maxcount);
 
     return(
         <>
-            {
+            {/* {
                 expended?
                 lists.map((list,index)=>(
                     <p key={`${list}-${index}`}>{list}</p>
@@ -19,6 +19,13 @@ export default function DisplayList({lists, Maxcount}:DisplayListProps){
                 :
                 lists.slice(0,Maxcount).map((list,index)=>(
                     <p key={`${list}-${index}`}>{list}</p>
+                ))
+            } */}
+            {
+                currentList.map((item)=>(
+                    <p key={`${item}`}>
+                    {item}
+                    </p>
                 ))
             }
             <button onClick={handleExpendedToggle}>{expended?`showLess:${Maxcount}`:`showMore:${lists.length-Maxcount}`}</button>

@@ -1,0 +1,15 @@
+.container{
+    width: 500px;
+    border: 1px solid salmon;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+}
+
+.day{
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: black;
+}
