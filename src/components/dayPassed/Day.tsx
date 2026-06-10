@@ -1,15 +1,15 @@
-import { differenceInDays, getDaysInYear, getYear } from "date-fns";
+import { differenceInDays, getDaysInYear, getYear, lastDayOfYear } from "date-fns";
 
 export const Day = () => {
   const totalDaysInYear = getDaysInYear(new Date());
   console.log(totalDaysInYear);
 
-  const remainigDays = differenceInDays(new Date(2026, 12, 31), new Date());
+  const currentYear= getYear(new Date())
+
+  const remainigDays = differenceInDays(lastDayOfYear(new Date()), new Date());
   console.log(remainigDays);
   const passedDays=totalDaysInYear-remainigDays;
 
-  const currentYear= getYear(new Date())
-  
   return (
     <>
     <div className="container">
